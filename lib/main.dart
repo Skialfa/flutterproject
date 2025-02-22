@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterproject/Screen/page_empat.dart';
+import 'package:flutterproject/Screen/page_kedua.dart';
+import 'package:flutterproject/Screen/page_ketiga.dart';
+import 'package:flutterproject/Screen/page_satu.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -48,13 +53,71 @@ class PageOne extends StatelessWidget {
         //appBar : properti dari sebuah widget
         //AppBar : widget
 
-        title: Text('Aplication Pertama',
+        title: Text('Aplikasi Pertama Mobile',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.blue,
       ),
       body: Center(
-        child: Text("Selamat Datang di Flutter Dimas App pertama MI 2B"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Selamat Datang di Flutter Dimas App pertama MI 2B"),
+            MaterialButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>PageSatu()),
+              );
+            },
+            color: Colors.red,
+              child: Text('Page 1',
+    style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+            child: MaterialButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>PageDua()),
+              );
+            },
+              elevation: 18.0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+
+              //color: Colors.yellow,
+              color: Color(0xD15C14FF),
+              clipBehavior: Clip.antiAlias,
+              child: Text('Page 2',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+            ),
+            MaterialButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>PageTiga()),
+              );
+            },
+              color: Colors.green,
+              child: Text('Page 3',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+            MaterialButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>PageEmpat()),
+              );
+            },
+              color: Colors.red,
+              child: Text('Page 4',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+          ],
+        ),
         //child :  cuma bisa nampung 1 widget
         //children : bisa nampung beberapa widget
       ),
